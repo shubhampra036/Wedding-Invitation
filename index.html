@@ -1,0 +1,467 @@
+<title>Arun &amp; Nisha</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Kalnia:wght@200;300;400&family=Hanken+Grotesk:wght@300;400;500&family=Tiro+Devanagari+Hindi&display=swap">
+<style>
+/* Layout: one phone-width invitation on a velvet ground; velvet and ivory chapters alternate with torn-paper edges, painted motion clips open the big moments */
+:root{
+  --ground:#3a0711;
+  --velvet:#5a0c19;
+  --maroon:#6e0f1f;
+  --sindoor:#b3122b;
+  --genda:#ef8a14;
+  --haldi:#f4bf1d;
+  --mehndi:#4f6b2a;
+  --gold:#c9a25a;
+  --gold-lt:#e8cf98;
+  --ivory:#f7efe2;
+  --ink:#2a1216;
+  --ink-soft:#75585a;
+  --f-script:"Corinthia","Snell Roundhand","Apple Chancery",cursive;
+  --f-display:"Kalnia","Didot","Bodoni 72",Georgia,serif;
+  --f-deva:"Tiro Devanagari Hindi","Kokila","Mangal",serif;
+  --f-ui:"Hanken Grotesk","Helvetica Neue",system-ui,sans-serif;
+  --torn:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 14' preserveAspectRatio='none'><path d='M0,14 V6 L9,8 L17,4 L26,7 L34,3 L45,6 L52,2 L63,6 L71,4 L80,8 L91,3 L99,6 L108,2 L118,7 L127,4 L136,6 L146,2 L155,7 L163,4 L174,6 L183,2 L192,7 L201,3 L211,6 L219,3 L230,7 L238,4 L248,6 L257,2 L266,7 L275,4 L284,6 L292,3 L300,6 V14Z' fill='black'/></svg>");
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html.locked,html.locked body{overflow:hidden}
+body{
+  background-color:var(--ground);
+  background-image:radial-gradient(circle,rgba(201,162,90,.22) 0 1.4px,transparent 2.2px);
+  background-size:30px 30px;
+  color:var(--ivory);font-family:var(--f-ui);font-weight:300;font-size:15px;line-height:1.65;
+}
+.invite{max-width:480px;margin:0 auto;background:var(--velvet);overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.5)}
+section{position:relative;text-align:center}
+.pad{padding-left:max(26px,env(safe-area-inset-left,0px));padding-right:max(26px,env(safe-area-inset-right,0px))}
+.velvet{background:var(--velvet)}
+.ivory{background:var(--ivory);color:var(--ink)}
+.tear::before{content:"";position:absolute;left:0;right:0;top:-11px;height:12px;background:inherit;-webkit-mask:var(--torn) center/100% 100%;mask:var(--torn) center/100% 100%;z-index:2}
+.label{font-weight:500;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin:0}
+.ivory .label{color:#9a7434}
+h2{font-family:var(--f-script);font-weight:700;font-size:54px;line-height:.95;margin:6px 0 10px;color:var(--gold-lt)}
+.ivory h2{color:var(--maroon)}
+p{margin:0 auto;max-width:34ch;text-wrap:pretty}
+.soft{color:#ead6cc}
+.ivory .soft{color:var(--ink-soft)}
+.knot{width:70px;margin:0 auto 10px;display:block}
+.diyas{width:220px;margin:22px auto 0}
+.btn{display:inline-block;margin-top:22px;padding:12px 22px;border-radius:999px;border:1px solid var(--gold);color:var(--gold-lt);text-decoration:none;
+  font-weight:500;font-size:11px;letter-spacing:.22em;text-transform:uppercase;background:rgba(0,0,0,.12);transition:background .25s,color .25s}
+.btn:hover{background:var(--gold);color:var(--ink)}
+.ivory .btn{background:var(--maroon);border-color:var(--maroon);color:var(--ivory)}
+.ivory .btn:hover{background:var(--sindoor)}
+.btn:focus-visible,button:focus-visible{outline:2px solid var(--haldi);outline-offset:3px}
+
+/* ---------- intro: envelope, then the Ganesha card ---------- */
+.intro{position:fixed;inset:0;z-index:60;background:#2a050c;overflow:hidden;transition:opacity .8s}
+.intro.done{opacity:0;pointer-events:none}
+.env{position:absolute;inset:0;background:url(assets/env1.jpg) center 52%/cover;transition:transform 1.6s cubic-bezier(.6,0,.2,1),filter 1.6s}
+.intro.open .env{transform:scale(1.25);filter:brightness(.45) blur(3px)}
+.intro .toran{position:absolute;top:env(safe-area-inset-top,0px);left:-4%;right:-4%;z-index:3;transition:opacity .8s}
+.lines{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none}
+.lines path{fill:none;stroke:var(--gold-lt);stroke-width:.7;stroke-dasharray:420;stroke-dashoffset:420;filter:drop-shadow(0 0 3px rgba(255,214,140,.9));animation:trace 5s ease-in-out infinite}
+.intro.open .lines{opacity:0;transition:opacity .6s}
+.seal{position:absolute;left:50%;top:52%;width:96px;height:96px;margin:-48px 0 0 -48px;border:0;border-radius:50%;background:transparent;cursor:pointer;z-index:4;animation:halo 2.4s ease-out infinite}
+.intro.open .seal{display:none}
+.tap{position:absolute;left:0;right:0;bottom:calc(46px + env(safe-area-inset-bottom,0px));z-index:3;text-align:center;font-family:var(--f-display);font-weight:300;font-size:17px;color:var(--gold-lt);text-shadow:0 2px 10px rgba(0,0,0,.7);transition:opacity .5s;pointer-events:none}
+.tap span{display:block;font-family:var(--f-ui);font-size:10px;letter-spacing:.32em;text-transform:uppercase;opacity:.85}
+.intro.open .tap{opacity:0}
+.card{position:absolute;left:50%;top:50%;width:min(78vw,340px);aspect-ratio:3/4.2;margin:0;transform:translate(-50%,120vh);z-index:5;
+  background:var(--ivory);border-radius:3px;box-shadow:0 30px 60px rgba(0,0,0,.5),inset 0 0 0 8px var(--ivory),inset 0 0 0 9px var(--gold);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:var(--ink);transition:transform 1.4s cubic-bezier(.2,.8,.2,1) .5s}
+.intro.open .card{transform:translate(-50%,-50%)}
+.card img{width:62%;mix-blend-mode:multiply}
+.card .vandana{font-family:var(--f-deva);font-size:clamp(18px,5.4vw,22px);margin:0}
+.card .tilak{width:7px;height:7px;border-radius:50%;background:var(--sindoor);margin-top:10px;opacity:0;transform:translateY(-16px)}
+.intro.open .card .tilak{animation:drop .6s ease-out 2.4s forwards}
+.card .diyas{width:70%;margin-top:6px}
+.enter{position:absolute;left:50%;bottom:calc(34px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:6;opacity:0;pointer-events:none;transition:opacity .6s;
+  padding:12px 26px;border-radius:999px;border:1px solid var(--gold);background:rgba(42,5,12,.6);color:var(--gold-lt);font:500 11px/1 var(--f-ui);letter-spacing:.24em;text-transform:uppercase;cursor:pointer}
+.intro.ready .enter{opacity:1;pointer-events:auto}
+
+/* ---------- hero ---------- */
+.hero{position:relative;aspect-ratio:9/16;max-height:100svh;width:100%;overflow:hidden;background:#2a050c}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(40,6,12,.72),transparent 40%,transparent 75%,rgba(90,12,25,.9))}
+.hero .toran{position:absolute;top:0;left:-4%;right:-4%;z-index:3}
+.names{position:absolute;top:16%;left:0;right:0;z-index:2;text-shadow:0 2px 20px rgba(50,6,14,.85)}
+.names .k{font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:#fff3dd}
+.names h1{font-family:var(--f-script);font-weight:700;font-size:clamp(70px,21vw,96px);line-height:.85;color:#fff8ea;margin:8px 0 0}
+.names h1 span{display:block;font-family:var(--f-display);font-weight:200;font-size:.32em;color:var(--gold-lt);margin:4px 0}
+.names .d{font-family:var(--f-display);font-weight:300;font-size:15px;letter-spacing:.24em;color:#fff3dd;margin-top:12px}
+.petals{position:absolute;inset:0;z-index:2;pointer-events:none}
+.petals i{position:absolute;top:-12px;width:9px;height:7px;border-radius:60% 10% 60% 10%;animation:fall linear infinite}
+.cue{position:absolute;bottom:22px;left:0;right:0;z-index:2;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-lt);animation:bob 2s ease-in-out infinite}
+
+/* ---------- welcome + countdown ---------- */
+.welcome{padding-block:40px 56px}
+.medals{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:26px}
+.medal{display:grid;justify-items:center;gap:7px}
+.medal b{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font:300 24px/1 var(--f-display);font-variant-numeric:tabular-nums;color:var(--ink);
+  background:radial-gradient(circle,#fff6d6 0 52%,var(--haldi) 53% 62%,var(--genda) 63%);box-shadow:0 0 0 3px var(--velvet),0 0 0 4px var(--gold)}
+.medal span{font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-lt)}
+
+/* ---------- rasmein ---------- */
+.rasmein{padding-block:46px 52px}
+.events{list-style:none;margin:20px auto 0;padding:0;max-width:390px;display:grid;gap:12px;text-align:left}
+.event{display:grid;grid-template-columns:58px minmax(0,1fr);gap:14px;align-items:center;padding:12px 14px 12px 12px;background:#fffaf1;border:1px solid #e8d5bd;border-radius:14px 14px 14px 3px}
+.event .ico{width:58px;height:58px;border-radius:50%;background:#f5e3bd;display:grid;place-items:center;box-shadow:inset 0 0 0 1.5px var(--gold-lt)}
+.event .ico svg{width:46px;height:46px;overflow:visible}
+.event .t{font-family:var(--f-display);font-weight:300;font-size:19px;color:var(--maroon);line-height:1.2}
+.event .w{font-weight:500;font-size:13.5px;color:var(--ink);margin-top:2px}
+.event .n{font-size:13px;color:var(--ink-soft);display:flex;align-items:center;gap:7px}
+.event .n i{width:10px;height:10px;border-radius:50%;flex:none;box-shadow:0 0 0 1.5px #fff,0 0 0 2.5px #e3cfb6}
+
+/* ---------- baraat, phere ---------- */
+.clip{display:block;width:100%;aspect-ratio:9/12;object-fit:cover;background:#2a050c}
+.chapter{padding-block:30px 52px}
+.when{font-family:var(--f-display);font-weight:300;font-size:17px;color:var(--ivory);margin-top:14px}
+.when b{font-weight:300;color:var(--gold-lt)}
+.phera{font-family:var(--f-display);font-weight:300;font-size:16px;color:var(--genda);letter-spacing:.06em;margin-top:6px}
+.vow{min-height:3.4em;margin-top:4px;font-size:16px;color:var(--ivory);transition:opacity .4s}
+.dots{display:flex;justify-content:center;gap:8px;margin-top:10px}
+.dots i{width:8px;height:8px;border-radius:50%;background:rgba(232,207,152,.28);transition:background .4s}
+.dots i.on{background:var(--genda)}
+.vows{list-style:none;margin:26px auto 0;padding:0;max-width:360px;text-align:left;display:grid;gap:2px}
+.vows li{display:grid;grid-template-columns:78px minmax(0,1fr);gap:12px;padding:8px 12px;border-radius:10px;font-size:14px;transition:background .5s}
+.vows li.on{background:rgba(239,138,20,.18)}
+.vows .k{font-family:var(--f-display);font-weight:300;color:var(--gold-lt)}
+
+/* ---------- kashi ---------- */
+.kashi{padding-block:0 52px}
+.kashi .sketch{display:block;width:100%;height:auto;mix-blend-mode:multiply}
+.venue{font-family:var(--f-display);font-weight:300;font-size:20px;color:var(--maroon);margin-top:6px}
+.facts{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px 16px;text-align:left;max-width:380px;margin:28px auto 0;font-size:14.5px}
+.facts dt{font-weight:500;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--sindoor);padding-top:4px}
+.facts dd{margin:0;min-width:0;line-height:1.55}
+
+/* ---------- dress code ---------- */
+.dress{padding-block:10px 56px}
+.swatches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:360px;margin:20px auto 0}
+.swatches div{display:grid;justify-items:center;gap:8px;font-size:12.5px;line-height:1.35;color:var(--ink-soft)}
+.swatches i{width:46px;height:46px;border-radius:50%;box-shadow:0 0 0 2px #fff,0 0 0 3px #e3cfb6}
+.swatches b{display:block;font-weight:500;color:var(--ink)}
+
+/* ---------- closing ---------- */
+.closing{padding-block:48px 70px}
+.kids{max-width:330px;margin:0 auto;padding:22px 20px;background:#fff8e2;border:2px dashed var(--genda);border-radius:4px;transform:rotate(-1.6deg);color:var(--sindoor)}
+.kids p{font-family:var(--f-script);font-weight:700;font-size:34px;line-height:1.05}
+.kids small{display:block;margin-top:8px;font-size:12px;color:var(--ink-soft)}
+.rsvp{margin-top:40px}
+.sign{font-family:var(--f-script);font-weight:700;font-size:44px;line-height:1;color:var(--gold-lt);margin-top:30px}
+.tag{font-weight:500;font-size:11px;letter-spacing:.24em;color:var(--gold);margin-top:14px}
+
+/* ---------- music ---------- */
+.music{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;width:46px;height:46px;border-radius:50%;border:0;cursor:pointer;
+  background:var(--sindoor);color:#fff;display:grid;place-items:center;box-shadow:0 0 0 2px rgba(255,255,255,.7),0 8px 20px rgba(0,0,0,.4)}
+.music svg{width:20px;height:20px}
+.music[hidden]{display:none}
+
+/* ---------- motion ---------- */
+.swing{transform-box:fill-box;transform-origin:50% 0;animation:swing 3.4s ease-in-out infinite alternate}
+.flame{transform-box:fill-box;transform-origin:50% 100%;animation:flick .8s ease-in-out infinite alternate}
+.glow{animation:glowp 1.6s ease-in-out infinite alternate}
+.spin{transform-box:fill-box;transform-origin:center;animation:spin 30s linear infinite}
+.stir{transform-box:fill-box;transform-origin:50% 100%;animation:swing 1s ease-in-out infinite alternate}
+.draw{stroke-dasharray:160;animation:draw 4s ease-in-out infinite}
+.trot{animation:bob .7s ease-in-out infinite}
+.rock{transform-box:fill-box;transform-origin:50% 0;animation:swing 1.6s ease-in-out infinite alternate}
+@keyframes swing{from{transform:rotate(-5deg)}to{transform:rotate(5deg)}}
+@keyframes flick{0%{transform:scale(1,1) rotate(-3deg)}50%{transform:scale(.9,1.1) rotate(2deg)}100%{transform:scale(1.06,.93) rotate(-1deg)}}
+@keyframes glowp{from{opacity:.5}to{opacity:.95}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes draw{0%{stroke-dashoffset:160}55%,80%{stroke-dashoffset:0}100%{stroke-dashoffset:-160}}
+@keyframes bob{50%{transform:translateY(-4px)}}
+@keyframes halo{0%{box-shadow:0 0 0 0 rgba(255,214,140,.75)}100%{box-shadow:0 0 0 30px rgba(255,214,140,0)}}
+@keyframes trace{0%{stroke-dashoffset:420;opacity:0}15%{opacity:1}60%,80%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+@keyframes drop{to{opacity:1;transform:none}}
+@keyframes fall{to{transform:translate(var(--dx,20px),110vh) rotate(520deg)}}
+@media (prefers-reduced-motion:no-preference){
+  @supports (animation-timeline:view()){
+    .reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
+    @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before{animation:none!important;transition:none!important}
+  .lines path{stroke-dashoffset:0}
+  .card .tilak{opacity:1;transform:none}
+}
+@media (min-width:520px){.invite{margin-block:30px}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="gGlow"><stop offset="0" stop-color="#ffd76a" stop-opacity=".9"/><stop offset="1" stop-color="#ffb02e" stop-opacity="0"/></radialGradient>
+    <symbol id="gendaO" viewBox="-6 -6 12 12" overflow="visible"><circle r="5.6" fill="#ef8a14"/><circle r="5.2" fill="none" stroke="#c9620a" stroke-width="1" stroke-dasharray="1.4 1"/><circle r="2.6" fill="none" stroke="#c9620a" stroke-width=".8" stroke-dasharray="1 .8"/></symbol>
+    <symbol id="gendaY" viewBox="-6 -6 12 12" overflow="visible"><circle r="5.6" fill="#f6b91c"/><circle r="5.2" fill="none" stroke="#d48d08" stroke-width="1" stroke-dasharray="1.4 1"/><circle r="2.6" fill="none" stroke="#d48d08" stroke-width=".8" stroke-dasharray="1 .8"/></symbol>
+    <symbol id="aam" viewBox="-4 0 8 26" overflow="visible"><path d="M0,0 C5,6 5,16 0,26 C-5,16 -5,6 0,0Z" fill="#3f7a2e"/><path d="M0,1 V25" stroke="#2a5a1e" stroke-width=".7"/></symbol>
+  </defs>
+</svg>
+
+<div class="intro" id="intro">
+  <div class="env"></div>
+  <div class="toran" data-toran="420" aria-hidden="true"></div>
+  <svg class="lines" viewBox="0 0 90 190" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M8,40 C20,30 30,50 22,62 C16,72 30,80 40,74 M82,40 C70,30 60,50 68,62 C74,72 60,80 50,74"/>
+    <path style="animation-delay:.6s" d="M10,160 C22,150 18,134 30,132 C40,130 42,142 36,146 M80,160 C68,150 72,134 60,132 C50,130 48,142 54,146"/>
+  </svg>
+  <button class="seal" id="seal" type="button" aria-label="Open the invitation"></button>
+  <p class="tap">Tap the seal to open<span>Arun &amp; Nisha</span></p>
+  <div class="card" aria-live="polite">
+    <img src="assets/g3.png" alt="Lord Ganesha in gold line">
+    <p class="vandana">॥ श्री गणेशाय नमः ॥</p>
+    <span class="tilak"></span>
+    <div class="diyas" data-diyas aria-hidden="true"></div>
+  </div>
+  <button class="enter" id="enter" type="button">Open the invitation</button>
+</div>
+
+<button class="music" id="music" type="button" aria-label="Pause music" hidden>
+  <svg viewBox="0 0 20 20" id="musicIcon" aria-hidden="true"><path d="M6 4h3v12H6zM11 4h3v12h-3z" fill="currentColor"/></svg>
+</button>
+<audio id="audio" src="assets/shehnai.mp3" loop preload="auto"></audio>
+
+<main class="invite">
+
+  <section class="hero">
+    <video src="assets/couple.mp4" poster="assets/c1.jpg" autoplay muted loop playsinline></video>
+    <div class="shade"></div>
+    <div class="toran" data-toran="420" aria-hidden="true"></div>
+    <div class="petals" id="petals" aria-hidden="true"></div>
+    <div class="names">
+      <p class="k">The wedding of</p>
+      <h1>Arun<span>&amp;</span>Nisha</h1>
+      <p class="d">20 · 12 · 2026 · Varanasi</p>
+    </div>
+    <p class="cue">Scroll</p>
+  </section>
+
+  <section class="welcome velvet pad">
+    <svg class="knot" viewBox="-50 -50 100 100" data-knot aria-hidden="true"></svg>
+    <h2>Welcome</h2>
+    <p class="soft">With the blessings of Lord Ganesha and our elders, we invite you and your family to Kashi to bless Arun and Nisha as they begin their life together.</p>
+    <div class="medals" id="medals">
+      <div class="medal"><b id="cd-d">0</b><span>Days</span></div>
+      <div class="medal"><b id="cd-h">00</b><span>Hours</span></div>
+      <div class="medal"><b id="cd-m">00</b><span>Minutes</span></div>
+      <div class="medal"><b id="cd-s">00</b><span>Seconds</span></div>
+    </div>
+    <div class="diyas" data-diyas aria-hidden="true"></div>
+    <a class="btn" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Arun%20%26%20Nisha%27s%20Wedding&amp;dates=20261220T133000Z/20261220T193000Z&amp;location=Varanasi%2C%20Uttar%20Pradesh&amp;details=Baraat%207%20PM%2C%20Varmala%209%20PM%2C%20Phere%20late%20night.">Save the date</a>
+  </section>
+
+  <section class="rasmein ivory tear pad">
+    <p class="label">The celebrations</p>
+    <h2>The Rasmein</h2>
+    <ul class="events">
+      <li class="event reveal"><span class="ico" data-icon="haldi"></span><div><div class="t">Haldi</div><div class="w">Sat 19 Dec · 11:00 AM</div><div class="n"><i style="background:#f4bf1d"></i>Wear yellow, expect to get messy</div></div></li>
+      <li class="event reveal"><span class="ico" data-icon="mehndi"></span><div><div class="t">Mehndi &amp; Sangeet</div><div class="w">Sat 19 Dec · 6:00 PM</div><div class="n"><i style="background:#4f6b2a"></i>Greens and bright prints</div></div></li>
+      <li class="event reveal"><span class="ico" data-icon="baraat"></span><div><div class="t">Baraat</div><div class="w">Sun 20 Dec · 7:00 PM</div><div class="n"><i style="background:#ef8a14"></i>Safas for every baraati</div></div></li>
+      <li class="event reveal"><span class="ico" data-icon="phere"></span><div><div class="t">The Wedding</div><div class="w">Sun 20 Dec · Varmala 9 PM, Phere by muhurat</div><div class="n"><i style="background:#b3122b"></i>Traditional, as grand as you like</div></div></li>
+      <li class="event reveal"><span class="ico" data-icon="reception"></span><div><div class="t">The Reception</div><div class="w">Mon 21 Dec · 7:30 PM</div><div class="n"><i style="background:#c9a25a"></i>Evening formal</div></div></li>
+    </ul>
+  </section>
+
+  <section class="velvet tear">
+    <video class="clip" src="assets/baraat.mp4" poster="assets/b1.jpg" autoplay muted loop playsinline aria-label="Animated baraat with the groom on a white mare"></video>
+    <div class="chapter tear velvet pad">
+      <p class="label">Sunday · 20 December</p>
+      <h2>The Baraat</h2>
+      <p class="soft">Arun rides out on his ghodi with the dhol leading the way. Find the music and follow it.</p>
+      <p class="when"><b>7:00 PM</b> · dancing compulsory</p>
+    </div>
+  </section>
+
+  <section class="velvet">
+    <video class="clip" id="phereVid" src="assets/phere.mp4" poster="assets/p1.jpg" autoplay muted loop playsinline aria-label="Animated saat phere around the sacred fire"></video>
+    <div class="chapter tear velvet pad">
+      <p class="label">With Agni as witness</p>
+      <h2>Saat Phere</h2>
+      <p class="phera" id="pheraNo">First phera</p>
+      <p class="vow" id="pheraVow">To keep a home where no one ever leaves hungry.</p>
+      <div class="dots" id="pheraDots"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <ol class="vows" id="vows">
+        <li class="on"><span class="k">First</span><span>Nourishment for the home and family</span></li>
+        <li><span class="k">Second</span><span>Strength of body, mind and spirit</span></li>
+        <li><span class="k">Third</span><span>Prosperity, earned honestly and shared</span></li>
+        <li><span class="k">Fourth</span><span>Happiness and respect for both families</span></li>
+        <li><span class="k">Fifth</span><span>Care for children and every living being</span></li>
+        <li><span class="k">Sixth</span><span>Health together through every season</span></li>
+        <li><span class="k">Seventh</span><span>Friendship for this life and beyond</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="kashi ivory tear">
+    <img class="sketch" src="assets/ghats.jpg" alt="Pencil sketch of the Varanasi ghats on the Ganga">
+    <div class="pad">
+      <p class="label">The city of light</p>
+      <h2>Welcome to Kashi</h2>
+      <p class="venue">Varanasi, Uttar Pradesh</p>
+      <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Varanasi%2C%20Uttar%20Pradesh">Open in Maps</a>
+      <dl class="facts reveal">
+        <dt>Fly</dt><dd>Lal Bahadur Shastri Airport (VNS) at Babatpur, about 25 km from the city</dd>
+        <dt>Train</dt><dd>Varanasi Junction or Banaras station. The Vande Bharat from New Delhi takes about 8 hours.</dd>
+        <dt>Weather</dt><dd>December nights drop to around 8°C, and morning fog can delay trains and flights. Pack a shawl and keep some buffer.</dd>
+        <dt>See</dt><dd>The Ganga aarti at Dashashwamedh Ghat every evening, and a sunrise boat ride along the ghats</dd>
+        <dt>Darshan</dt><dd>Kashi Vishwanath Temple</dd>
+        <dt>Taste</dt><dd>Malaiyyo, the winter-only morning sweet, plus kachori-sabzi and a Banarasi paan</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="dress ivory pad">
+    <p class="label">What to wear</p>
+    <h2>Dress Code</h2>
+    <p class="soft">Traditional and festive. Here is a palette to plan around.</p>
+    <div class="swatches">
+      <div><i style="background:#b3122b"></i><span><b>Sindoor</b>Wedding</span></div>
+      <div><i style="background:#f4bf1d"></i><span><b>Haldi</b>Haldi</span></div>
+      <div><i style="background:#4f6b2a"></i><span><b>Mehndi</b>Mehndi</span></div>
+      <div><i style="background:#ef8a14"></i><span><b>Marigold</b>Baraat</span></div>
+      <div><i style="background:#c9a25a"></i><span><b>Gold</b>Reception</span></div>
+      <div><i style="background:#6e0f1f"></i><span><b>Velvet</b>Any evening</span></div>
+    </div>
+  </section>
+
+  <section class="closing velvet tear pad">
+    <div class="kids reveal">
+      <p>Come to Arun bhaiya and Nisha didi's wedding, or else kutti!</p>
+      <small>From the little ones of the family</small>
+    </div>
+    <div class="rsvp">
+      <p class="label">Kindly confirm</p>
+      <p class="soft" style="margin-top:8px">Please let the family know you're coming by 5 December.</p>
+    </div>
+    <div class="diyas" data-diyas aria-hidden="true"></div>
+    <p class="soft" style="margin-top:26px;font-style:italic">With love and blessings,</p>
+    <p class="sign">The families of<br>Arun &amp; Nisha</p>
+    <p class="tag">#ARUNWEDSNISHA</p>
+  </section>
+
+</main>
+
+<script>
+(function(){
+  let seed=21;
+  const rnd=()=>(seed=seed*16807%2147483647)/2147483647;
+  const between=(a,b)=>a+rnd()*(b-a);
+  const f=n=>(+n).toFixed(1);
+  const $=id=>document.getElementById(id);
+  const use=(id,x,y,w,h)=>`<use href="#${id}" x="${f(x-w/2)}" y="${f(y-h/2)}" width="${f(w)}" height="${f(h)}"/>`;
+  const delay=()=>`style="animation-delay:-${between(0,3).toFixed(2)}s"`;
+  const svg=(vb,body)=>`<svg viewBox="${vb}" aria-hidden="true" style="display:block;width:100%;height:auto">${body}</svg>`;
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* marigold toran */
+  function toran(W){
+    let s=`<path d="M0,6 Q${W/2},26 ${W},6" stroke="#7a4b1d" stroke-width="2.2" fill="none"/>`;
+    const n=Math.round(W/16);
+    for(let i=0;i<=n;i++){
+      const t=i/n,x=t*W,y=6+20*t*(1-t);
+      if(i%2===0){
+        const k=3+Math.round(Math.sin(t*Math.PI)*2);
+        let g='';for(let j=0;j<k;j++)g+=use(j%2?'gendaY':'gendaO',x,y+6+j*10,12,12);
+        g+=`<path d="M${f(x)},${f(y+k*10+2)} l-3,8 h6z" fill="#b3122b"/>`;
+        s+=`<g class="swing" ${delay()}>${g}</g>`;
+      } else s+=`<g class="swing" ${delay()}>${use('aam',x,y+14,8,26)}</g>`;
+    }
+    return svg(`0 0 ${W} 82`,s);
+  }
+  document.querySelectorAll('[data-toran]').forEach(el=>el.innerHTML=toran(+el.dataset.toran));
+
+  /* mandala knot */
+  document.querySelectorAll('[data-knot]').forEach(el=>{
+    let p='';
+    for(let k=0;k<16;k++)p+=`<path d="M0,-44 C7,-34 7,-24 0,-18 C-7,-24 -7,-34 0,-44Z" transform="rotate(${k*22.5})" fill="${k%2?'#ef8a14':'#c9a25a'}"/>`;
+    for(let k=0;k<16;k++)p+=`<circle cx="0" cy="-14" r="2.2" transform="rotate(${k*22.5+11.25})" fill="#e8cf98"/>`;
+    el.innerHTML=`<g class="spin">${p}<circle r="11" fill="#f4bf1d" stroke="#c9a25a" stroke-width="1.5"/><circle r="5" fill="#b3122b"/></g>`;
+  });
+
+  /* diyas */
+  const diya=(x,y,s=1)=>`<g transform="translate(${x} ${y}) scale(${s})"><circle cy="-12" r="16" fill="url(#gGlow)" class="glow" ${delay()}/>
+    <g class="flame" ${delay()}><path d="M0,-22 C6,-12 6,-5 0,-2 C-6,-5 -6,-12 0,-22Z" fill="#f7a81a"/><path d="M0,-14 C2.5,-9 2.5,-5.5 0,-4 C-2.5,-5.5 -2.5,-9 0,-14Z" fill="#fff3c4"/></g>
+    <path d="M-16,0 Q0,16 16,0Z" fill="#a8461f"/><ellipse rx="16" ry="4" fill="#7e2f12"/><path d="M-15,1 Q0,10 15,1" fill="none" stroke="#e2b95a" stroke-width="1.2" stroke-dasharray="2 2"/></g>`;
+  document.querySelectorAll('[data-diyas]').forEach(el=>{let d='';[30,80,130,180].forEach((x,i)=>d+=diya(x+5,i%3?34:30,i%3?.9:1));el.innerHTML=svg('0 0 220 50',d);});
+
+  /* event icons */
+  const icons={
+    haldi:`<ellipse cx="26" cy="30" rx="18" ry="5" fill="#f4bf1d"/><path d="M8,30 Q26,52 44,30Z" fill="#a8461f"/>${use('gendaO',18,28,8,8)}<g class="stir"><path d="M30,30 L40,6" stroke="#8a5a2b" stroke-width="3" stroke-linecap="round"/></g>`,
+    mehndi:`<path d="M16,48 C12,38 10,30 12,24 C13,20 17,21 17,25 L18,30 L18,12 C18,8 23,8 23,12 L23,26 L24,8 C24,4 29,4 29,8 L29,26 L31,10 C31,6 36,6 36,10 L35,28 L38,18 C39,14 44,15 43,20 L39,38 C37,44 34,48 32,52Z" fill="#f1c9a5" stroke="#c98a5f"/><path class="draw" d="M26,44 C20,40 22,32 27,32 C32,32 33,38 29,39 M21,22 C23,20 25,22 24,24 M30,20 C32,18 34,20 33,22 M26,14 V22" stroke="#7a3a14" stroke-width="1.4" fill="none" stroke-linecap="round"/>`,
+    baraat:`<g class="trot"><path d="M38,46 L36,26 C36,18 30,10 22,10 C16,10 10,16 8,22 L6,30 L12,32 L16,26 L20,28 L24,46Z" fill="#fff" stroke="#cdbfa9"/><path d="M18,10 C16,4 20,0 26,2 C22,4 22,8 22,10Z" fill="#b3122b"/><circle cx="16" cy="18" r="1.4" fill="#3b130f"/><path d="M24,24 C30,28 34,34 36,40" stroke="#e2b95a" stroke-width="2" fill="none" stroke-dasharray="3 2"/></g>`,
+    phere:`<path d="M8,42 L26,48 L44,42 L44,48 L26,54 L8,48Z" fill="#8f3a22"/><path d="M8,42 L26,36 L44,42 L26,48Z" fill="#c25a32"/><circle cx="26" cy="30" r="14" fill="url(#gGlow)" class="glow"/><g class="flame"><path d="M26,10 C34,22 34,34 26,42 C18,34 18,22 26,10Z" fill="#f7a81a"/><path d="M26,24 C29,30 29,36 26,40 C23,36 23,30 26,24Z" fill="#fff3c4"/></g>`,
+    reception:`<g class="rock"><path d="M10,8 h12 l-2,12 a4,4 0 0 1 -8,0z M16,24 v16 M11,40 h10" fill="none" stroke="#a8843f" stroke-width="2"/></g><g class="rock" style="animation-direction:alternate-reverse"><path d="M30,8 h12 l-2,12 a4,4 0 0 1 -8,0z M36,24 v16 M31,40 h10" fill="none" stroke="#a8843f" stroke-width="2"/></g><circle cx="26" cy="6" r="1.8" fill="#ef8a14" class="glow"/>`
+  };
+  document.querySelectorAll('[data-icon]').forEach(el=>el.innerHTML=`<svg viewBox="0 0 52 56" aria-hidden="true">${icons[el.dataset.icon]}</svg>`);
+
+  /* petals over the couple */
+  if(!reduce){
+    const host=$('petals'),cols=['#ef8a14','#f6b91c','#b3122b','#d6475e'];
+    for(let i=0;i<20;i++){const p=document.createElement('i');p.style.left=(Math.random()*100)+'%';p.style.background=cols[i%4];
+      p.style.animationDuration=(7+Math.random()*7)+'s';p.style.animationDelay=(-Math.random()*12)+'s';p.style.setProperty('--dx',(Math.random()*90-45).toFixed(0)+'px');host.appendChild(p);}
+  }
+
+  /* countdown to the baraat */
+  const target=new Date('2026-12-20T19:00:00+05:30').getTime();
+  (function tick(){
+    let d=Math.max(0,target-Date.now());
+    if(d===0){$('medals').innerHTML='<p class="soft" style="font-family:var(--f-script);font-weight:700;font-size:44px;color:var(--gold-lt)">Today is the day</p>';return;}
+    const days=Math.floor(d/864e5);d-=days*864e5;const h=Math.floor(d/36e5);d-=h*36e5;const m=Math.floor(d/6e4);d-=m*6e4;
+    $('cd-d').textContent=days;$('cd-h').textContent=String(h).padStart(2,'0');$('cd-m').textContent=String(m).padStart(2,'0');$('cd-s').textContent=String(Math.floor(d/1e3)).padStart(2,'0');
+    setTimeout(tick,1000-Date.now()%1000);
+  })();
+
+  /* each loop of the phere clip advances one phera */
+  const vowText=['To keep a home where no one ever leaves hungry.','To give each other strength of body, mind and spirit.','To earn honestly and share what comes.','To bring happiness and respect to both families.','To care for children and for every living being.','To stay together in health through every season.','To remain best friends, for this life and beyond.'];
+  const ord=['First','Second','Third','Fourth','Fifth','Sixth','Seventh'];
+  const pv=$('phereVid'),dots=[...document.querySelectorAll('#pheraDots i')],rows=[...document.querySelectorAll('#vows li')];
+  let n=0,last=0;
+  pv.addEventListener('timeupdate',()=>{
+    if(pv.currentTime<last){
+      n=(n+1)%7;$('pheraNo').textContent=ord[n]+' phera';$('pheraVow').textContent=vowText[n];
+      dots.forEach((d,i)=>d.classList.toggle('on',i<=n));rows.forEach((r,i)=>r.classList.toggle('on',i===n));
+    }
+    last=pv.currentTime;
+  });
+
+  /* temple bell, made in the browser */
+  function bell(){
+    try{
+      const A=new (window.AudioContext||window.webkitAudioContext)(),t=A.currentTime;
+      [[740,.5],[1110,.28],[1850,.14],[2960,.06]].forEach(([fr,g])=>{
+        const o=A.createOscillator(),v=A.createGain();o.frequency.value=fr;
+        v.gain.setValueAtTime(g*.35,t);v.gain.exponentialRampToValueAtTime(.0001,t+3);
+        o.connect(v).connect(A.destination);o.start(t);o.stop(t+3.1);
+      });
+    }catch(e){}
+  }
+
+  /* music */
+  const audio=$('audio'),mbtn=$('music'),icon=$('musicIcon');
+  audio.volume=.35;
+  const setIcon=()=>{const on=!audio.paused;icon.innerHTML=on?'<path d="M6 4h3v12H6zM11 4h3v12h-3z" fill="currentColor"/>':'<path d="M6 4l10 6-10 6z" fill="currentColor"/>';mbtn.setAttribute('aria-label',on?'Pause music':'Play music');};
+  mbtn.addEventListener('click',()=>{audio.paused?audio.play().catch(()=>{}):audio.pause();});
+  audio.addEventListener('play',setIcon);audio.addEventListener('pause',setIcon);
+
+  /* opening sequence */
+  const intro=$('intro');
+  document.documentElement.classList.add('locked');
+  $('seal').addEventListener('click',()=>{
+    bell();
+    audio.play().catch(()=>{});
+    mbtn.hidden=false;setIcon();
+    intro.classList.add('open');
+    setTimeout(()=>intro.classList.add('ready'),reduce?0:3000);
+  },{once:true});
+  intro.addEventListener('click',e=>{if(!intro.classList.contains('open')&&e.target!==$('seal'))$('seal').click();});
+  $('enter').addEventListener('click',()=>{
+    intro.classList.add('done');
+    document.documentElement.classList.remove('locked');
+    setTimeout(()=>{intro.hidden=true;},reduce?0:800);
+  });
+})();
+</script>

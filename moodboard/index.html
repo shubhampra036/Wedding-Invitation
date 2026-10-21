@@ -1,0 +1,518 @@
+<title>Ila &amp; Tyagi Moodboard</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Kalnia:wght@200;300;400&family=Hanken+Grotesk:wght@300;400;500&family=Tiro+Devanagari+Hindi&display=swap">
+<style>
+/* Layout: a velvet-maroon board; a statement, what each version brings, a nine-screen storyboard on phones, the motion clips, live festive motifs, then the system */
+:root{
+  --velvet:#4a0a16;
+  --maroon:#6e0f1f;
+  --sindoor:#b3122b;
+  --genda:#ef8a14;
+  --haldi:#f4bf1d;
+  --mehndi:#4f6b2a;
+  --gold:#c9a25a;
+  --gold-lt:#e8cf98;
+  --ivory:#f7efe2;
+  --ink:#2a1216;
+  --ink-soft:#7a5a5a;
+  --f-script:"Corinthia","Snell Roundhand",cursive;
+  --f-display:"Kalnia","Didot",Georgia,serif;
+  --f-deva:"Tiro Devanagari Hindi","Kokila",serif;
+  --f-ui:"Hanken Grotesk","Helvetica Neue",system-ui,sans-serif;
+  --torn:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 14' preserveAspectRatio='none'><path d='M0,14 V6 L9,8 L17,4 L26,7 L34,3 L45,6 L52,2 L63,6 L71,4 L80,8 L91,3 L99,6 L108,2 L118,7 L127,4 L136,6 L146,2 L155,7 L163,4 L174,6 L183,2 L192,7 L201,3 L211,6 L219,3 L230,7 L238,4 L248,6 L257,2 L266,7 L275,4 L284,6 L292,3 L300,6 V14Z' fill='black'/></svg>");
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--velvet);color:var(--ivory);font-family:var(--f-ui);font-weight:300;font-size:15px;line-height:1.65;
+  background-image:radial-gradient(ellipse at 50% -10%,rgba(239,138,20,.16),transparent 55%)}
+.wrap{max-width:1120px;margin:0 auto;padding-block:0 90px;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.top-toran{margin:0 calc(-1 * max(20px,env(safe-area-inset-left,0px)));height:96px;overflow:hidden}
+.top-toran svg{display:block;width:100%;height:auto;min-width:900px}
+.label{font-weight:500;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin:0}
+h1{font-family:var(--f-display);font-weight:200;font-size:clamp(42px,8vw,88px);line-height:1.02;margin:14px 0 0;text-wrap:balance}
+h1 em{font-style:normal;font-family:var(--f-script);font-weight:700;color:var(--genda);font-size:1.12em}
+h1 b{font-weight:200;color:var(--gold-lt)}
+.lede{max-width:62ch;color:#e3cfc4;margin:20px 0 0;font-size:16px}
+section{margin-top:84px}
+h2{font-family:var(--f-display);font-weight:200;font-size:32px;margin:6px 0 0;line-height:1.15}
+.rule{height:1px;background:linear-gradient(90deg,var(--gold),transparent);margin:14px 0 28px;opacity:.6}
+
+/* merge table */
+.merge{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(201,162,90,.25);border:1px solid rgba(201,162,90,.25)}
+.merge > div{background:var(--velvet);padding:22px 22px 24px;min-width:0}
+.merge h3{font-family:var(--f-script);font-weight:700;font-size:34px;line-height:1;margin:0;color:var(--gold-lt)}
+.merge h3.f{color:var(--genda)}
+.merge ul{margin:12px 0 0;padding-left:18px;color:#ecdcd2}
+.merge li{margin:3px 0}
+.merge .note{grid-column:1/-1;font-size:14px;color:#e3cfc4}
+.merge .note b{font-weight:500;color:var(--gold-lt)}
+
+/* phones */
+.frames{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 28px}
+.frame{margin:0}
+.phone{position:relative;aspect-ratio:9/19;max-width:290px;margin:0 auto;border-radius:36px;overflow:hidden;background:var(--maroon);
+  box-shadow:0 0 0 2px #1a0509,0 0 0 8px #2b0b11,0 0 0 9px rgba(201,162,90,.35),0 40px 70px rgba(0,0,0,.45)}
+.frame figcaption{max-width:290px;margin:22px auto 0;font-size:13.5px;color:#d9c2b8}
+.frame figcaption b{display:block;font-weight:500;color:var(--gold-lt);font-size:14px;margin-bottom:2px}
+.fill{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph-toran{position:absolute;top:0;left:-6%;right:-6%;z-index:3;pointer-events:none}
+.ph-toran svg{display:block;width:100%;height:auto}
+.tear-top{position:relative}
+.tear-top::before{content:"";position:absolute;left:0;right:0;top:-10px;height:12px;background:inherit;-webkit-mask:var(--torn) center/100% 100%;mask:var(--torn) center/100% 100%}
+
+/* 1 envelope */
+.seal-glow{position:absolute;left:50%;top:50.5%;width:74px;height:74px;margin:-37px 0 0 -37px;border-radius:50%;animation:halo 2.4s ease-out infinite}
+.tap{position:absolute;bottom:52px;left:0;right:0;text-align:center;font-family:var(--f-display);font-weight:300;color:var(--gold-lt);font-size:15px;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+.tap span{display:block;font-family:var(--f-ui);font-size:9px;letter-spacing:.3em;text-transform:uppercase;opacity:.8}
+.lines{position:absolute;inset:0;width:100%;height:100%}
+.lines path{fill:none;stroke:var(--gold-lt);stroke-width:.8;stroke-dasharray:400;stroke-dashoffset:400;animation:trace 5s ease-in-out infinite;filter:drop-shadow(0 0 3px rgba(255,214,140,.9))}
+
+/* 2 card */
+.env-low{position:absolute;inset:0;background:url(env2.jpg) center 70%/cover}
+.card{position:absolute;left:12%;right:12%;top:13%;height:58%;background:var(--ivory);border-radius:3px;box-shadow:0 20px 40px rgba(0,0,0,.4);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;animation:rise 6s ease-in-out infinite}
+.card img{width:56%;mix-blend-mode:multiply}
+.card p{margin:0;font-family:var(--f-deva);color:var(--ink);font-size:15px}
+.card .diyas{width:80%}
+.pocket{position:absolute;left:0;right:0;bottom:0;height:40%;background:url(env2.jpg) center bottom/cover;clip-path:polygon(0 30%,50% 0,100% 30%,100% 100%,0 100%);box-shadow:0 -6px 20px rgba(0,0,0,.4)}
+
+/* 3 couple */
+.shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(40,6,12,.6),transparent 42%)}
+.hero-names{position:absolute;top:15%;left:0;right:0;text-align:center;text-shadow:0 2px 18px rgba(60,10,20,.8);z-index:2}
+.hero-names .k{font-size:9px;letter-spacing:.34em;text-transform:uppercase;color:#fff3dd;margin:0}
+.hero-names .n{font-family:var(--f-script);font-weight:700;font-size:56px;line-height:.9;color:#fff8ea;margin:6px 0 0}
+.hero-names .n span{display:block;font-family:var(--f-display);font-weight:200;font-size:20px;color:var(--gold-lt);margin:2px 0}
+.hero-names .d{font-family:var(--f-display);font-weight:300;font-size:13px;letter-spacing:.2em;color:#fff3dd;margin:8px 0 0}
+.petal{position:absolute;top:-10px;width:8px;height:6px;border-radius:60% 10% 60% 10%;animation:fall linear infinite;z-index:2}
+.music{position:absolute;right:14px;bottom:14px;width:26px;height:26px;border-radius:50%;background:var(--sindoor);display:grid;place-items:center;box-shadow:0 0 0 2px rgba(255,255,255,.6);z-index:3}
+.music::before{content:"";width:8px;height:9px;border-left:2.5px solid #fff;border-right:2.5px solid #fff}
+
+/* 4 welcome + countdown */
+.welcome{position:absolute;inset:0;background:var(--maroon);text-align:center;display:flex;flex-direction:column;justify-content:center;padding:0 0 10px}
+.welcome .knot{width:62px;margin:0 auto}
+.welcome h3{font-family:var(--f-script);font-weight:700;font-size:36px;margin:8px 0 0;color:var(--gold-lt);line-height:1}
+.welcome p{font-size:10.5px;line-height:1.6;color:#f1dfd6;margin:8px 24px 0}
+.medals{display:flex;justify-content:center;gap:7px;margin-top:18px}
+.medals div{display:grid;justify-items:center;gap:4px}
+.medals b{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font:300 17px/1 var(--f-display);font-variant-numeric:tabular-nums;color:var(--ink);
+  background:radial-gradient(circle,#fff6d6 0 52%,var(--haldi) 53% 62%,var(--genda) 63%);box-shadow:0 0 0 2px var(--maroon),0 0 0 3px var(--gold)}
+.medals span{font-size:7.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-lt)}
+.welcome .diyas{width:70%;margin:18px auto 0}
+
+/* 5 rasmein */
+.ras{position:absolute;inset:0;background:var(--ivory);color:var(--ink);padding:56px 16px 16px}
+.ras h3{font-family:var(--f-script);font-weight:700;font-size:34px;margin:0;color:var(--maroon);line-height:1;text-align:center}
+.ras ul{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:7px}
+.ras li{display:grid;grid-template-columns:40px 1fr;gap:9px;align-items:center;padding:6px 8px;border:1px solid #e6d3bd;border-radius:10px 10px 10px 2px;background:#fffaf1}
+.ras .ico{width:40px;height:40px;border-radius:50%;background:#f5e3bd;display:grid;place-items:center}
+.ras .ico svg{width:32px;height:32px;overflow:visible}
+.ras .t{font-family:var(--f-display);font-weight:300;font-size:13px;line-height:1.2;color:var(--maroon)}
+.ras .w{font-size:9px;color:var(--ink-soft)}
+.ras .w i{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:4px;vertical-align:0}
+
+/* 6 baraat, 7 phere */
+.vid-top{display:block;width:100%;height:58%;object-fit:cover}
+.under{position:relative;background:var(--maroon);padding:16px 18px;text-align:center;margin-top:-4px}
+.under h3{font-family:var(--f-script);font-weight:700;font-size:32px;margin:0;color:var(--gold-lt);line-height:1}
+.under p{font-size:10.5px;line-height:1.55;color:#f1dfd6;margin:6px 0 0}
+.under .big{font-family:var(--f-display);font-weight:300;font-size:14px;color:var(--ivory);margin-top:8px}
+.under .big b{font-weight:300;color:var(--gold-lt)}
+.phera{font-family:var(--f-display);font-weight:300;font-size:13px;color:var(--genda);margin-top:8px;letter-spacing:.08em}
+.vow{font-size:11px;color:var(--ivory);min-height:3.2em;margin-top:2px;transition:opacity .4s}
+.dots{display:flex;justify-content:center;gap:6px;margin-top:8px}
+.dots i{width:6px;height:6px;border-radius:50%;background:rgba(232,207,152,.3);transition:background .4s}
+.dots i.on{background:var(--genda)}
+
+/* 8 meerut */
+.mrt{position:absolute;inset:0;background:var(--ivory);color:var(--ink);text-align:center}
+.mrt img{width:100%;height:30%;object-fit:cover;mix-blend-mode:multiply}
+.mrt h3{font-family:var(--f-script);font-weight:700;font-size:30px;margin:4px 0 0;color:var(--maroon);line-height:1}
+.mrt dl{display:grid;grid-template-columns:auto 1fr;gap:5px 10px;text-align:left;margin:10px 18px 0;font-size:9.5px;line-height:1.45}
+.mrt dt{font-weight:500;color:var(--sindoor);letter-spacing:.06em;text-transform:uppercase;font-size:8px;padding-top:1px}
+.mrt dd{margin:0;color:var(--ink)}
+.mrt .btn{display:inline-block;margin-top:10px;padding:6px 14px;border-radius:999px;background:var(--maroon);color:var(--ivory);font-size:8px;letter-spacing:.2em;text-transform:uppercase}
+
+/* 9 closing */
+.close{position:absolute;inset:0;background:var(--maroon);text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px}
+.kids{background:#fff8e2;color:var(--sindoor);border:2px dashed var(--genda);border-radius:4px;padding:12px 14px;transform:rotate(-2deg);max-width:86%}
+.kids p{margin:0;font-family:var(--f-script);font-weight:700;font-size:24px;line-height:1.05}
+.kids small{display:block;font-size:8.5px;color:var(--ink-soft);margin-top:6px}
+.rsvp{margin-top:20px}
+.rsvp b{display:block;font-family:var(--f-script);font-weight:700;font-size:28px;color:var(--gold-lt);line-height:1}
+.rsvp span{display:inline-block;margin-top:8px;padding:6px 16px;border-radius:999px;background:var(--ivory);color:var(--maroon);font-size:8px;letter-spacing:.2em;text-transform:uppercase}
+.close .diyas{width:72%;margin-top:18px}
+.close .tag{font-size:9px;letter-spacing:.2em;color:var(--gold);margin-top:8px}
+
+/* motion clips */
+.motionvids{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+
+/* live motifs */
+.motifs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.motifs figure{margin:0;background:rgba(255,255,255,.04);border:1px solid rgba(201,162,90,.22);border-radius:6px;padding:16px 10px 12px;text-align:center}
+.motifs svg{width:100%;height:110px}
+.motifs figcaption{font-size:12.5px;color:#d9c2b8;margin-top:6px}
+.motifs figcaption b{display:block;color:var(--gold-lt);font-weight:500}
+
+/* assets + system */
+.assets{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+.assets figure{margin:0}
+.assets img{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:4px}
+.assets figcaption{font-size:12px;color:#d9c2b8;margin-top:6px}
+.system{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:52px}
+.swatches{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.swatches div div{aspect-ratio:1.2/1;border-radius:3px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
+.swatches p{margin:8px 0 0;font-size:13px;line-height:1.35}
+.swatches p span{display:block;color:#c9aaa0;font-size:12px}
+.types{display:grid;gap:20px}
+.types div{display:grid;gap:2px;border-bottom:1px solid rgba(201,162,90,.2);padding-bottom:16px}
+.types small{font-size:12px;color:#c9aaa0}
+.ask{margin-top:84px;padding:28px;border:1px solid rgba(201,162,90,.45);border-radius:4px}
+.ask ul{margin:10px 0 0;padding-left:18px;color:#e3cfc4}
+
+/* motion primitives (shared with the first Hindu version) */
+.swing{transform-box:fill-box;transform-origin:50% 0;animation:swing 3.4s ease-in-out infinite alternate}
+.flame{transform-box:fill-box;transform-origin:50% 100%;animation:flick .8s ease-in-out infinite alternate}
+.glow{animation:glowp 1.6s ease-in-out infinite alternate}
+.spin{transform-box:fill-box;transform-origin:center;animation:spin 30s linear infinite}
+.stir{transform-box:fill-box;transform-origin:50% 100%;animation:swing 1s ease-in-out infinite alternate}
+.draw{stroke-dasharray:160;animation:draw 4s ease-in-out infinite}
+.trot{animation:bob .7s ease-in-out infinite}
+.rock{transform-box:fill-box;transform-origin:50% 0;animation:swing 1.6s ease-in-out infinite alternate}
+@keyframes swing{from{transform:rotate(-5deg)}to{transform:rotate(5deg)}}
+@keyframes flick{0%{transform:scale(1,1) rotate(-3deg)}50%{transform:scale(.9,1.1) rotate(2deg)}100%{transform:scale(1.06,.93) rotate(-1deg)}}
+@keyframes glowp{from{opacity:.5}to{opacity:.95}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes draw{0%{stroke-dashoffset:160}55%,80%{stroke-dashoffset:0}100%{stroke-dashoffset:-160}}
+@keyframes bob{50%{transform:translateY(-2px)}}
+@keyframes halo{0%{box-shadow:0 0 0 0 rgba(255,214,140,.75)}100%{box-shadow:0 0 0 26px rgba(255,214,140,0)}}
+@keyframes trace{0%{stroke-dashoffset:400;opacity:0}15%{opacity:1}60%,80%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+@keyframes rise{0%,15%{transform:translateY(46%)}45%,100%{transform:translateY(0)}}
+@keyframes fall{to{transform:translate(var(--dx,20px),640px) rotate(500deg)}}
+@media (prefers-reduced-motion:reduce){*,*::before{animation:none!important}.lines path{stroke-dashoffset:0}}
+@media (max-width:900px){
+  .frames,.motionvids{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .merge{grid-template-columns:minmax(0,1fr)}
+  .motifs{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .assets{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .system{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){.frames,.motionvids{grid-template-columns:minmax(0,1fr)}.motifs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="gGlow"><stop offset="0" stop-color="#ffd76a" stop-opacity=".9"/><stop offset="1" stop-color="#ffb02e" stop-opacity="0"/></radialGradient>
+    <linearGradient id="gCopper" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9b4a1c"/><stop offset=".45" stop-color="#e08a46"/><stop offset="1" stop-color="#8a3d16"/></linearGradient>
+    <symbol id="gendaO" viewBox="-6 -6 12 12" overflow="visible"><circle r="5.6" fill="#ef8a14"/><circle r="5.2" fill="none" stroke="#c9620a" stroke-width="1" stroke-dasharray="1.4 1"/><circle r="2.6" fill="none" stroke="#c9620a" stroke-width=".8" stroke-dasharray="1 .8"/></symbol>
+    <symbol id="gendaY" viewBox="-6 -6 12 12" overflow="visible"><circle r="5.6" fill="#f6b91c"/><circle r="5.2" fill="none" stroke="#d48d08" stroke-width="1" stroke-dasharray="1.4 1"/><circle r="2.6" fill="none" stroke="#d48d08" stroke-width=".8" stroke-dasharray="1 .8"/></symbol>
+    <symbol id="aam" viewBox="-4 0 8 26" overflow="visible"><path d="M0,0 C5,6 5,16 0,26 C-5,16 -5,6 0,0Z" fill="#3f7a2e"/><path d="M0,1 V25" stroke="#2a5a1e" stroke-width=".7"/></symbol>
+  </defs>
+</svg>
+
+<main class="wrap">
+  <div class="top-toran" data-toran="1100" aria-hidden="true"></div>
+  <p class="label">Ila &amp; Tyagi · Moodboard 06 · Shahi Shaadi</p>
+  <h1><b>Velvet outside,</b><br><em>marigold inside.</em></h1>
+  <p class="lede">This combines the two directions. The premium shell stays from the current board: the maroon velvet envelope, the Ganesha seal, the painted Magnific scenes and the bride, groom and phere motion clips. Inside, the festive Hindu layer comes back from the first version. That means swinging marigold torans, the kalash, flickering diyas, mandala knots, every rasm from haldi to reception, the baraat, the seven vows, the kids' note and the Meerut guide. Hindi still appears only in ॥ श्री गणेशाय नमः ॥.</p>
+
+  <section>
+    <p class="label">01 · The blend</p>
+    <h2>What each version brings</h2>
+    <div class="rule"></div>
+    <div class="merge">
+      <div><h3>From the royal board</h3><ul>
+        <li>Velvet envelope with a gold Ganesha wax seal and glowing paisley lines</li>
+        <li>An ivory card that rises with the gold Ganesha and the vandana</li>
+        <li>Painted Magnific art: couple, phere, baraat, mandap, venue sketch</li>
+        <li>Motion clips, torn-paper chapters, shehnai toggle, RSVP</li>
+        <li>Corinthia script names and Kalnia dates</li>
+      </ul></div>
+      <div><h3 class="f">From the first Hindu invite</h3><ul>
+        <li>Marigold and mango-leaf torans that swing at the top of screens</li>
+        <li>Mangal kalash, flickering diyas, slowly spinning mandala knots</li>
+        <li>Marigold countdown medallions and falling petals</li>
+        <li>Full rasmein with animated icons: haldi, mehndi, baraat, phere, reception</li>
+        <li>Seven vows lit one by one, the kids' note, the Meerut travel guide</li>
+      </ul></div>
+      <p class="note merge-note" style="background:var(--velvet);padding:16px 22px;margin:0"><b>Rule:</b> velvet maroon and gold set the luxury. Marigold, haldi and mehndi green only appear as festive accents, so the invite feels royal and joyful without looking busy.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="label">02 · Storyboard</p>
+    <h2>Nine screens, one scroll</h2>
+    <div class="rule"></div>
+    <div class="frames">
+
+      <figure class="frame">
+        <div class="phone">
+          <img class="fill" src="env1.jpg" alt="Maroon velvet envelope with gold Ganesha wax seal">
+          <div class="ph-toran" data-toran="320" aria-hidden="true"></div>
+          <svg class="lines" viewBox="0 0 90 190" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M8,40 C20,30 30,50 22,62 C16,72 30,80 40,74 M82,40 C70,30 60,50 68,62 C74,72 60,80 50,74"/>
+            <path style="animation-delay:.6s" d="M10,150 C22,140 18,124 30,122 C40,120 42,132 36,136 M80,150 C68,140 72,124 60,122 C50,120 48,132 54,136"/>
+          </svg>
+          <span class="seal-glow"></span>
+          <p class="tap">Tap to open<span>the seal</span></p>
+        </div>
+        <figcaption><b>1 · Envelope under a toran</b>The velvet envelope sits under a swinging marigold toran. The seal glows and gold paisley lines trace over the velvet.</figcaption>
+      </figure>
+
+      <figure class="frame">
+        <div class="phone">
+          <div class="env-low"></div>
+          <div class="card"><img src="g3.png" alt=""><p>॥ श्री गणेशाय नमः ॥</p><div class="diyas" data-diyas aria-hidden="true"></div></div>
+          <div class="pocket"></div>
+        </div>
+        <figcaption><b>2 · Ganesh vandana</b>A temple bell rings and the card rises. It shows the gold Ganesha, the vandana and a row of flickering diyas.</figcaption>
+      </figure>
+
+      <figure class="frame">
+        <div class="phone" id="heroPhone">
+          <video class="fill" src="couple.mp4" poster="c1.jpg" autoplay muted loop playsinline></video><div class="shade"></div>
+          <div class="ph-toran" data-toran="320" aria-hidden="true"></div>
+          <div class="hero-names"><p class="k">The wedding of</p><p class="n">Ila<span>&amp;</span>Tyagi</p><p class="d">20 · 02 · 2027 · Meerut</p></div>
+          <span class="music" aria-hidden="true"></span>
+        </div>
+        <figcaption><b>3 · Bride and groom</b>The varmala clip plays under the toran with falling marigold petals. The names write in and shehnai starts.</figcaption>
+      </figure>
+
+      <figure class="frame">
+        <div class="phone">
+          <div class="welcome">
+            <svg class="knot" viewBox="-50 -50 100 100" data-knot aria-hidden="true"></svg>
+            <h3>Welcome</h3>
+            <p>With the blessings of our elders, we invite you and your family to Meerut to bless Ila and Tyagi.</p>
+            <div class="medals"><div><b>122</b><span>Days</span></div><div><b>06</b><span>Hours</span></div><div><b>41</b><span>Mins</span></div><div><b>09</b><span>Secs</span></div></div>
+            <div class="diyas" data-diyas aria-hidden="true"></div>
+          </div>
+        </div>
+        <figcaption><b>4 · Welcome and countdown</b>A spinning mandala knot opens this screen. The live countdown ticks in marigold medallions, with diyas below.</figcaption>
+      </figure>
+
+      <figure class="frame">
+        <div class="phone">
+          <div class="ras">
+            <div class="ph-toran" data-toran="320" aria-hidden="true"></div>
+            <h3>The Rasmein</h3>
+            <ul>
+              <li><span class="ico" data-icon="haldi"></span><div><div class="t">Haldi</div><div class="w"><i style="background:#f4bf1d"></i>Fri 19 Feb · 11 AM · wear yellow</div></div></li>
+              <li><span class="ico" data-icon="mehndi"></span><div><div class="t">Mehndi &amp; Sangeet</div><div class="w"><i style="background:#4f6b2a"></i>Fri 19 Feb · 6 PM · wear green</div></div></li>
+              <li><span class="ico" data-icon="baraat"></span><div><div class="t">Baraat</div><div class="w"><i style="background:#ef8a14"></i>Sat 20 Feb · 7 PM · safa for all</div></div></li>
+              <li><span class="ico" data-icon="phere"></span><div><div class="t">The Wedding</div><div class="w"><i style="background:#b3122b"></i>Sat 20 Feb · Phere 11:45 PM</div></div></li>
+              <li><span class="ico" data-icon="reception"></span><div><div class="t">The Reception</div><div class="w"><i style="background:#c9a25a"></i>Mon 22 Feb · 7:30 PM</div></div></li>
+            </ul>
+          </div>
+        </div>
+        <figcaption><b>5 · The rasmein</b>All the events on ivory paper. Each has a small animated icon: haldi being stirred, mehndi drawing itself, a trotting ghodi, agni flickering and glasses clinking.</figcaption>
+      </figure>
+
+      <figure class="frame">
+        <div class="phone">
+          <video class="vid-top" src="baraat.mp4" poster="b1.jpg" autoplay muted loop playsinline></video>
+          <div class="under tear-top">
+            <h3>The Baraat</h3>
+            <p>The groom rides out on his ghodi. Find the dhol and follow it.</p>
+            <p class="big"><b>Sat 20 Feb</b> · 7 PM · from the Tyagi home</p>
+          </div>
+        </div>
+        <figcaption><b>6 · Baraat</b>The painted baraat comes alive. The ghodi walks, the dhol beats and the relatives dance under string lights.</figcaption>
+      </figure>
+
+      <figure class="frame">
+        <div class="phone">
+          <video class="vid-top" id="phereVid" src="phere.mp4" poster="p1.jpg" autoplay muted loop playsinline></video>
+          <div class="under tear-top">
+            <h3>Saat Phere</h3>
+            <p class="phera" id="pheraNo">First phera</p>
+            <p class="vow" id="pheraVow">To keep a home where no one ever leaves hungry.</p>
+            <div class="dots" id="pheraDots"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+        <figcaption><b>7 · Seven vows</b>The couple circle the agni. Each loop of the clip moves to the next phera and lights its vow, from the first to the seventh.</figcaption>
+      </figure>
+
+      <figure class="frame">
+        <div class="phone">
+          <div class="mrt">
+            <img src="venue.jpg" alt="Pencil sketch of a haveli venue">
+            <h3>Welcome to Meerut</h3>
+            <dl>
+              <dt>Train</dt><dd>Namo Bharat RRTS from Delhi in about an hour</dd>
+              <dt>Road</dt><dd>Delhi–Meerut Expressway, 1 to 1½ hours</dd>
+              <dt>Fly</dt><dd>Delhi IGI is the nearest airport</dd>
+              <dt>Weather</dt><dd>February nights are cold. Bring a shawl.</dd>
+              <dt>Taste</dt><dd>Meerut's gajak and revdi, best in winter</dd>
+            </dl>
+            <span class="btn">Open in Maps</span>
+          </div>
+        </div>
+        <figcaption><b>8 · Venue and Meerut guide</b>A pencil sketch of the venue, then local tips from the first version: the Namo Bharat train, the Expressway, the weather and gajak.</figcaption>
+      </figure>
+
+      <figure class="frame">
+        <div class="phone">
+          <div class="close">
+            <div class="kids"><p>Come to Ila didi's wedding, or else kutti!</p><small>From the little ones of the family</small></div>
+            <div class="rsvp"><b>Will you join us?</b><span>Confirm attendance</span></div>
+            <div class="diyas" data-diyas aria-hidden="true"></div>
+            <p class="tag">#ILAKITYAGISHAADI</p>
+          </div>
+        </div>
+        <figcaption><b>9 · Kids' note and RSVP</b>The playful note from the kids comes back, followed by RSVP, a closing row of diyas and the wedding hashtag.</figcaption>
+      </figure>
+
+    </div>
+  </section>
+
+  <section>
+    <p class="label">03 · Motion graphics</p>
+    <h2>Couple, baraat and phere</h2>
+    <div class="rule"></div>
+    <div class="motionvids">
+      <figure class="frame"><div class="phone"><video class="fill" src="couple.mp4" poster="c1.jpg" autoplay muted loop playsinline></video></div><figcaption><b>Varmala</b>Plays behind the names on screen 3.</figcaption></figure>
+      <figure class="frame"><div class="phone"><video class="fill" src="baraat.mp4" poster="b1.jpg" autoplay muted loop playsinline></video></div><figcaption><b>Baraat</b>Opens the baraat chapter on screen 6.</figcaption></figure>
+      <figure class="frame"><div class="phone"><video class="fill" src="phere.mp4" poster="p1.jpg" autoplay muted loop playsinline></video></div><figcaption><b>Saat phere</b>Drives the seven vows on screen 7.</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <p class="label">04 · Festive layer, live</p>
+    <h2>Motifs from the first version</h2>
+    <div class="rule"></div>
+    <div class="motifs">
+      <figure><div data-toran="120" data-long="1"></div><figcaption><b>Toran</b>Marigold laris and mango leaves that swing</figcaption></figure>
+      <figure><div data-kalash></div><figcaption><b>Mangal kalash</b>Coconut, mango leaves, swastik</figcaption></figure>
+      <figure><svg viewBox="-50 -50 100 100" data-knot aria-hidden="true"></svg><figcaption><b>Mandala knot</b>Slowly spins between chapters</figcaption></figure>
+      <figure><div data-diyas></div><figcaption><b>Diyas</b>Flames flicker and glow</figcaption></figure>
+      <figure><svg viewBox="0 0 120 110" aria-hidden="true"><g transform="translate(60 52)"><circle r="40" fill="#ef8a14"/><circle r="33" fill="#f4bf1d"/><circle r="27" fill="#fff6d6"/><text y="10" text-anchor="middle" font-family="Kalnia" font-weight="300" font-size="28" fill="#2a1216">122</text></g></svg><figcaption><b>Marigold medallion</b>For the countdown numbers</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <p class="label">05 · Artwork kit</p>
+    <h2>Generated with Magnific</h2>
+    <div class="rule"></div>
+    <div class="assets">
+      <figure><img src="env1.jpg" alt="Velvet envelope A"><figcaption>Envelope A</figcaption></figure>
+      <figure><img src="env2.jpg" alt="Velvet envelope B"><figcaption>Envelope B</figcaption></figure>
+      <figure><img src="c1.jpg" alt="Couple at varmala"><figcaption>Couple · animated</figcaption></figure>
+      <figure><img src="b1.jpg" alt="Baraat on ghodi"><figcaption>Baraat · animated</figcaption></figure>
+      <figure><img src="p1.jpg" alt="Saat phere"><figcaption>Phere · animated</figcaption></figure>
+      <figure><img src="hero2.jpg" alt="Mandap in arch"><figcaption>Mandap</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="system">
+    <div>
+      <p class="label">06 · Colour</p>
+      <h2>Royal base, festive sparks</h2>
+      <div class="rule"></div>
+      <div class="swatches">
+        <div><div style="background:#6e0f1f"></div><p>Velvet<span>base</span></p></div>
+        <div><div style="background:#c9a25a"></div><p>Antique gold<span>lines, seal</span></p></div>
+        <div><div style="background:#f7efe2"></div><p>Ivory<span>paper chapters</span></p></div>
+        <div><div style="background:#b3122b"></div><p>Sindoor<span>roses, buttons</span></p></div>
+        <div><div style="background:#ef8a14"></div><p>Marigold<span>toran, petals</span></p></div>
+        <div><div style="background:#f4bf1d"></div><p>Haldi<span>medallions</span></p></div>
+        <div><div style="background:#4f6b2a"></div><p>Mehndi<span>leaves only</span></p></div>
+        <div><div style="background:#2a1216"></div><p>Ink<span>text</span></p></div>
+      </div>
+    </div>
+    <div>
+      <p class="label">07 · Type</p>
+      <h2>Script, serif, one Hindi line</h2>
+      <div class="rule"></div>
+      <div class="types">
+        <div><span style="font-family:var(--f-script);font-weight:700;font-size:56px;line-height:.9;color:var(--gold-lt)">Ila &amp; Tyagi</span><small>Corinthia · names and chapter titles</small></div>
+        <div><span style="font-family:var(--f-deva);font-size:28px">॥ श्री गणेशाय नमः ॥</span><small>Tiro Devanagari Hindi · the only Hindi in the invite</small></div>
+        <div><span style="font-family:var(--f-display);font-weight:200;font-size:30px">Saturday · 20 February 2027</span><small>Kalnia · dates, event names, numbers</small></div>
+        <div><span style="font-size:12px;letter-spacing:.3em;text-transform:uppercase">Baraat 7 PM · Phere 11:45 PM</span><small>Hanken Grotesk · small details</small></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ask">
+    <p class="label">Needed from you</p>
+    <ul>
+      <li>Real dates, times and venues for haldi, mehndi, baraat, wedding and reception. Everything shown is a placeholder.</li>
+      <li>Envelope A or B</li>
+      <li>Keep all five rasmein, or only the wedding and reception?</li>
+      <li>Optional: photos of Ila and Tyagi to match the painted couple, and the family names</li>
+    </ul>
+  </div>
+</main>
+
+<script>
+(function(){
+  let seed=21;
+  const rnd=()=>(seed=seed*16807%2147483647)/2147483647;
+  const between=(a,b)=>a+rnd()*(b-a);
+  const f=n=>(+n).toFixed(1);
+  const use=(id,x,y,w,h)=>`<use href="#${id}" x="${f(x-w/2)}" y="${f(y-h/2)}" width="${f(w)}" height="${f(h)}"/>`;
+  const delay=()=>`style="animation-delay:-${between(0,3).toFixed(2)}s"`;
+  const svg=(vb,body)=>`<svg viewBox="${vb}" aria-hidden="true" style="display:block;width:100%;height:auto">${body}</svg>`;
+
+  function toran(W,long){
+    let s=`<path d="M0,6 Q${W/2},26 ${W},6" stroke="#7a4b1d" stroke-width="2.2" fill="none"/>`;
+    const n=Math.round(W/16);
+    for(let i=0;i<=n;i++){
+      const t=i/n,x=t*W,y=6+20*t*(1-t);
+      if(i%2===0){
+        const k=(long?5:3)+Math.round(Math.sin(t*Math.PI)*(long?2:1));
+        let g='';for(let j=0;j<k;j++)g+=use(j%2?'gendaY':'gendaO',x,y+6+j*10,12,12);
+        g+=`<path d="M${f(x)},${f(y+k*10+2)} l-3,8 h6z" fill="#b3122b"/>`;
+        s+=`<g class="swing" ${delay()}>${g}</g>`;
+      } else s+=`<g class="swing" ${delay()}>${use('aam',x,y+14,8,26)}</g>`;
+    }
+    return svg(`0 0 ${W} ${long?100:64}`,s);
+  }
+  document.querySelectorAll('[data-toran]').forEach(el=>el.innerHTML=toran(+el.dataset.toran,!!el.dataset.long));
+
+  const knot=()=>{let p='';for(let k=0;k<16;k++)p+=`<path d="M0,-44 C7,-34 7,-24 0,-18 C-7,-24 -7,-34 0,-44Z" transform="rotate(${k*22.5})" fill="${k%2?'#ef8a14':'#c9a25a'}"/>`;
+    for(let k=0;k<16;k++)p+=`<circle cx="0" cy="-14" r="2.2" transform="rotate(${k*22.5+11.25})" fill="#e8cf98"/>`;
+    return `<g class="spin">${p}<circle r="11" fill="#f4bf1d" stroke="#c9a25a" stroke-width="1.5"/><circle r="5" fill="#b3122b"/></g>`;};
+  document.querySelectorAll('[data-knot]').forEach(el=>el.innerHTML=knot());
+
+  const diya=(x,y,s=1)=>`<g transform="translate(${x} ${y}) scale(${s})"><circle cy="-12" r="16" fill="url(#gGlow)" class="glow" ${delay()}/>
+    <g class="flame" ${delay()}><path d="M0,-22 C6,-12 6,-5 0,-2 C-6,-5 -6,-12 0,-22Z" fill="#f7a81a"/><path d="M0,-14 C2.5,-9 2.5,-5.5 0,-4 C-2.5,-5.5 -2.5,-9 0,-14Z" fill="#fff3c4"/></g>
+    <path d="M-16,0 Q0,16 16,0Z" fill="#a8461f"/><ellipse rx="16" ry="4" fill="#7e2f12"/><path d="M-15,1 Q0,10 15,1" fill="none" stroke="#e2b95a" stroke-width="1.2" stroke-dasharray="2 2"/></g>`;
+  document.querySelectorAll('[data-diyas]').forEach(el=>{let d='';[30,80,130,180].forEach((x,i)=>d+=diya(x+5,i%3?34:30,i%3?.9:1));el.innerHTML=svg('0 0 220 50',d);});
+
+  document.querySelectorAll('[data-kalash]').forEach(el=>el.innerHTML=svg('0 0 120 130',`
+    <g>${[-60,-30,0,30,60].map(r=>`<use href="#aam" x="56" y="6" width="8" height="34" transform="rotate(${r} 60 38)"/>`).join('')}</g>
+    <ellipse cx="60" cy="26" rx="13" ry="15" fill="#8a5a2b"/><path d="M47,26 Q60,40 73,26 L73,32 Q60,46 47,32Z" fill="#b3122b"/>
+    <path d="M44,44 H76 L72,52 H48Z" fill="url(#gCopper)"/><path d="M48,52 C24,58 22,104 44,118 H76 C98,104 96,58 72,52Z" fill="url(#gCopper)"/>
+    <path d="M44,55 Q60,61 76,55" stroke="#b3122b" stroke-width="3" fill="none"/><path d="M44,58 Q60,64 76,58" stroke="#f4bf1d" stroke-width="2" fill="none"/>
+    <g stroke="#b3122b" stroke-width="2.4" fill="none" stroke-linecap="round"><path d="M60,74 V98 M48,86 H72 M60,74 H66 M72,86 V92 M60,98 H54 M48,86 V80"/></g>
+    <g fill="#b3122b"><circle cx="54" cy="80" r="1.6"/><circle cx="66" cy="80" r="1.6"/><circle cx="54" cy="92" r="1.6"/><circle cx="66" cy="92" r="1.6"/></g>`));
+
+  const icons={
+    haldi:`<ellipse cx="26" cy="30" rx="18" ry="5" fill="#f4bf1d"/><path d="M8,30 Q26,52 44,30Z" fill="#a8461f"/>${use('gendaO',18,28,8,8)}<g class="stir"><path d="M30,30 L40,6" stroke="#8a5a2b" stroke-width="3" stroke-linecap="round"/></g>`,
+    mehndi:`<path d="M16,48 C12,38 10,30 12,24 C13,20 17,21 17,25 L18,30 L18,12 C18,8 23,8 23,12 L23,26 L24,8 C24,4 29,4 29,8 L29,26 L31,10 C31,6 36,6 36,10 L35,28 L38,18 C39,14 44,15 43,20 L39,38 C37,44 34,48 32,52Z" fill="#f1c9a5" stroke="#c98a5f"/><path class="draw" d="M26,44 C20,40 22,32 27,32 C32,32 33,38 29,39 M21,22 C23,20 25,22 24,24 M30,20 C32,18 34,20 33,22 M26,14 V22" stroke="#7a3a14" stroke-width="1.4" fill="none" stroke-linecap="round"/>`,
+    baraat:`<g class="trot"><path d="M38,46 L36,26 C36,18 30,10 22,10 C16,10 10,16 8,22 L6,30 L12,32 L16,26 L20,28 L24,46Z" fill="#fff" stroke="#cdbfa9"/><path d="M18,10 C16,4 20,0 26,2 C22,4 22,8 22,10Z" fill="#b3122b"/><circle cx="16" cy="18" r="1.4" fill="#3b130f"/><path d="M24,24 C30,28 34,34 36,40" stroke="#e2b95a" stroke-width="2" fill="none" stroke-dasharray="3 2"/></g>`,
+    phere:`<path d="M8,42 L26,48 L44,42 L44,48 L26,54 L8,48Z" fill="#8f3a22"/><path d="M8,42 L26,36 L44,42 L26,48Z" fill="#c25a32"/><circle cx="26" cy="30" r="14" fill="url(#gGlow)" class="glow"/><g class="flame"><path d="M26,10 C34,22 34,34 26,42 C18,34 18,22 26,10Z" fill="#f7a81a"/><path d="M26,24 C29,30 29,36 26,40 C23,36 23,30 26,24Z" fill="#fff3c4"/></g>`,
+    reception:`<g class="rock" style="transform-origin:30% 0"><path d="M10,8 h12 l-2,12 a4,4 0 0 1 -8,0z M16,24 v16 M11,40 h10" fill="none" stroke="#c9a25a" stroke-width="2"/></g><g class="rock" style="animation-direction:alternate-reverse"><path d="M30,8 h12 l-2,12 a4,4 0 0 1 -8,0z M36,24 v16 M31,40 h10" fill="none" stroke="#c9a25a" stroke-width="2"/></g><circle cx="26" cy="6" r="1.6" fill="#ef8a14" class="glow"/>`
+  };
+  document.querySelectorAll('[data-icon]').forEach(el=>el.innerHTML=`<svg viewBox="0 0 52 56" aria-hidden="true">${icons[el.dataset.icon]}</svg>`);
+
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce){
+    const host=document.getElementById('heroPhone'),cols=['#ef8a14','#f6b91c','#b3122b','#d6475e'];
+    for(let i=0;i<16;i++){const p=document.createElement('i');p.className='petal';p.style.left=(Math.random()*100)+'%';p.style.background=cols[i%4];
+      p.style.animationDuration=(6+Math.random()*6)+'s';p.style.animationDelay=(-Math.random()*10)+'s';p.style.setProperty('--dx',(Math.random()*80-40).toFixed(0)+'px');host.appendChild(p);}
+  }
+
+  /* each loop of the phere clip advances one phera */
+  const vows=['To keep a home where no one ever leaves hungry.','To give each other strength of body, mind and spirit.','To earn honestly and share what comes.','To bring happiness and respect to both families.','To care for children and for every living being.','To stay together in health through every season.','To remain best friends, for this life and beyond.'];
+  const names=['First','Second','Third','Fourth','Fifth','Sixth','Seventh'];
+  const v=document.getElementById('phereVid'),no=document.getElementById('pheraNo'),vow=document.getElementById('pheraVow'),dots=[...document.querySelectorAll('#pheraDots i')];
+  let n=0,last=0;
+  v.addEventListener('timeupdate',()=>{
+    if(v.currentTime<last){n=(n+1)%7;no.textContent=names[n]+' phera';vow.textContent=vows[n];dots.forEach((d,i)=>d.classList.toggle('on',i<=n));}
+    last=v.currentTime;
+  });
+})();
+</script>
